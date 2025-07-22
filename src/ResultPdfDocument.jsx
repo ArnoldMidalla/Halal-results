@@ -151,7 +151,7 @@ const ResultPdfDocument = ({ data }) => (
       {/* STUDENT AVERAGE */}
       <View style={styles.averageSection}>
         <Text style={styles.sectionTitle}>
-          Average Score: {data.reportMeta.averageScore}%
+          Average Score: {data.reportMeta.averageScore}
         </Text>
       </View>
 

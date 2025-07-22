@@ -144,7 +144,7 @@ export default function resultPage() {
                         className="three border-1 border-gray-200 rounded-md py-5 flex-col items-center min-w-35 min-h-20 "
                       >
                         <h1 className="font-medium text-xs">Student Average</h1>
-                        <p className="font-bold text-xl">{result.average}</p>
+                        <p className="font-bold text-xl">{result.average}%</p>
                       </div>
                       <div
                         id="studentInfoBoxes"
