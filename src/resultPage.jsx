@@ -71,7 +71,7 @@ export default function resultPage() {
         session: result.session || "2024/2025",
         class: result.class || "JSS 1", // 👈 Only class is used
         next_term_begins: "September 15, 2025",
-        classPosition: result.position || "N/A",
+        classPosition: result.class_position || "N/A",
         no_of_students: result.no_of_students || "N/A",
         averageScore: result.average || "N/A", // Add average score
       },
@@ -81,8 +81,8 @@ export default function resultPage() {
         passportPhotoUrl: result.passport_url || placeHolderImg,
       },
       principalInfo: {
-        name: "Dorcas Midalla",
-        signatureLine: "____________________",
+        name: "Dorcas Linus Midalla",
+        // signatureLine: "____________________",
       },
       results: results,
       generatedDate: new Date().toLocaleString("en-US", {
