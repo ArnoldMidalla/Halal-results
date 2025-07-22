@@ -11,6 +11,13 @@ import {
 
 // Styles for the PDF
 const styles = StyleSheet.create({
+  // averageSection: {
+  //   marginTop: 20,
+  //   padding: 10,
+  //   border: "1 solid #000",
+  //   backgroundColor: "#f2f2f2",
+  // },
+
   page: {
     padding: 20,
     fontSize: 12,
@@ -41,6 +48,8 @@ const styles = StyleSheet.create({
     textDecoration: "underline",
   },
   studentInfo: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 10,
   },
   table: {
@@ -103,16 +112,19 @@ const ResultPdfDocument = ({ data }) => (
       {/* STUDENT INFO */}
       <Text style={styles.sectionTitle}>Student Information</Text>
       <View style={styles.studentInfo}>
-        <Text>Name: {data.studentInfo.studentName}</Text>
-        <Text>Student ID: {data.studentInfo.studentId}</Text>
-        <Text>Class: {data.reportMeta.class}</Text>
-        <Text>Term: {data.reportMeta.term}</Text>
-        <Text>Session: {data.reportMeta.session}</Text>
-        <Text>
-          Class Position: {data.reportMeta.classPosition} of{" "}
-          {data.reportMeta.no_of_students} students
-        </Text>
-        <Text>Next Term Begins: {data.reportMeta.next_term_begins}</Text>
+        <View>
+          <Text>Name: {data.studentInfo.studentName}</Text>
+          <Text>Student ID: {data.studentInfo.studentId}</Text>
+          <Text>Class: {data.reportMeta.class}</Text>
+          <Text>Term: {data.reportMeta.term}</Text>
+          <Text>Session: {data.reportMeta.session}</Text>
+          <Text>
+            Class Position: {data.reportMeta.classPosition} of{" "}
+            {data.reportMeta.no_of_students} students
+          </Text>
+          <Text>Next Term Begins: {data.reportMeta.next_term_begins}</Text>
+        </View>
+        <Image style={styles.logo} src={data.studentInfo.passportPhotoUrl} />
       </View>
 
       {/* RESULTS TABLE */}
@@ -124,7 +136,6 @@ const ResultPdfDocument = ({ data }) => (
           <Text style={styles.tableColHeader}>Exam</Text>
           <Text style={styles.tableColHeader}>Total</Text>
           <Text style={styles.tableColHeader}>Grade</Text>
-          <Text style={styles.tableColHeader}>Remarks</Text>
         </View>
         {data.results.map((item, idx) => (
           <View style={styles.tableRow} key={idx}>
@@ -133,9 +144,16 @@ const ResultPdfDocument = ({ data }) => (
             <Text style={styles.tableCol}>{item.examScore}</Text>
             <Text style={styles.tableCol}>{item.totalScore}</Text>
             <Text style={styles.tableCol}>{item.grade}</Text>
-            <Text style={styles.tableCol}>{item.remarks}</Text>
           </View>
         ))}
+      </View>
+
+      {/* STUDENT AVERAGE */}
+      <View style={styles.averageSection}>
+        {/* <Text style={styles.sectionTitle}>Student Average</Text> */}
+        <Text style={styles.sectionTitle}>
+          Average Score: {data.reportMeta.averageScore}
+        </Text>
       </View>
 
       {/* PRINCIPAL / SIGNATURE */}

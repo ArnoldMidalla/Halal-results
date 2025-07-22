@@ -1,6 +1,40 @@
 @import "tailwindcss";
 
-body{
+body {
   font-family: DM Sans;
   margin: 0;
+}
+
+#studentInfoBoxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.one {
+  background-color: hsl(201, 100%, 96%);
+  color: #002152;
+  border-color: #002152;
+}
+
+.two {
+  background-color: hsl(266, 100%, 95%);
+  color: hsl(266, 100%, 16%);
+  border-color: hsl(266, 100%, 16%);
+}
+
+.three {
+  background-color: hsl(20, 100%, 95%);
+  color: hsl(20, 100%, 16%);
+  border-color: hsl(20, 100%, 16%);
+}
+
+.four {
+  background-color: hsl(130, 100%, 95%);
+  color: hsl(130, 100%, 16%);
+  border-color: hsl(130, 100%, 16%);
+}
+
+.checkAnother {
+  padding: 6.45px 8px;
 }
