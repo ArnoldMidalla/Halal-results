@@ -102,7 +102,7 @@ export default function resultPage() {
         <div className="flex-col">
           <div className="bg-blue-900 h-20 flex items-center justify-center gap-4 rounded-t-md">
             <img src={placeholder} alt="logo" className="h-10" />
-            <h1 className="text-2xl font-bold text-white ">
+            <h1 className="text-xl font-bold text-white ">
               Student Result Portal
             </h1>
           </div>
@@ -144,7 +144,9 @@ export default function resultPage() {
                         className="three border-1 border-gray-200 rounded-md py-5 flex-col items-center min-w-35 min-h-20 "
                       >
                         <h1 className="font-medium text-xs">Student Average</h1>
-                        <p className="font-bold text-xl">{result.average}%</p>
+                        <p className="font-bold text-xl">
+                          {result.average.toFixed(2)}%
+                        </p>
                       </div>
                       <div
                         id="studentInfoBoxes"
@@ -160,7 +162,7 @@ export default function resultPage() {
                   <div className="flex items-center justify-center gap-5 mt-8">
                     <div>
                       <PDFDownloadLink
-                        className="border-solid border-blue-900 border-2 bg-blue-900 text-gray-100 hover:text-blue-900 hover:bg-gray-100 duration-300 cursor-pointer px-4 py-2 rounded-md font-bold"
+                        className="border-solid border-blue-900 border-2 bg-blue-900 text-gray-100 hover:text-blue-900 hover:bg-gray-100 duration-300 cursor-pointer px-4 py-2 rounded-md font-bold flex text-center"
                         document={
                           <ResultPdfDocument data={buildPdfData(result)} />
                         }
@@ -173,7 +175,7 @@ export default function resultPage() {
                     </div>
                     <button
                       onClick={() => setResult(null)}
-                      className="border-solid border-blue-900 border-2 hover:bg-blue-900 hover:text-gray-100 text-blue-900 bg-gray-100 duration-300 cursor-pointer rounded-md font-bold checkAnother"
+                      className="border-blue-900 border-2 hover:bg-blue-900 hover:text-gray-100 text-blue-900 duration-300 cursor-pointer rounded-md font-bold checkAnother"
                     >
                       Check Another
                     </button>

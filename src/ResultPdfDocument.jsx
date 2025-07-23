@@ -124,7 +124,7 @@ const ResultPdfDocument = ({ data }) => (
           </Text>
           <Text>Next Term Begins: {data.reportMeta.next_term_begins}</Text>
         </View>
-        <Image style={styles.logo} src={data.studentInfo.passportPhotoUrl} />
+        <Image style={styles.logo } src={data.studentInfo.passportPhotoUrl} />
       </View>
 
       {/* RESULTS TABLE */}
@@ -151,7 +151,7 @@ const ResultPdfDocument = ({ data }) => (
       {/* STUDENT AVERAGE */}
       <View style={styles.averageSection}>
         <Text style={styles.sectionTitle}>
-          Average Score: {data.reportMeta.averageScore}
+          Average Score: {data.reportMeta.averageScore.toFixed(2)}%
         </Text>
       </View>
 
